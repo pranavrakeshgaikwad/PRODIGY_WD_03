@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: url('https://th.bing.com/th/id/OIG4.UCBHnouOq4AqXAlNQXzv?pid=ImgGn') center/cover no-repeat; /* Full-size background image */
+    color: #000;
+    overflow: hidden; /* Hide any potential scroll bars */
+    position: relative;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 120px); /* Increased cell width */
+    grid-gap: 10px; /* Increased gap between cells */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+    position: relative;
+}
+
+.cell {
+    width: 120px;
+    height: 120px; /* Increased cell height */
+    border: 2px solid #fff; /* White border to match background */
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Slight shadow */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    position: relative;
+}
+
+.cell:hover {
+    background-color: rgba(255, 255, 255, 1); /* Full white on hover */
+    transform: scale(1.05); /* Slight scale-up on hover */
+}
+
+.symbol {
+    font-family: 'Indie Flower', cursive; /* Funky font */
+    font-size: 3em; /* Larger font size */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Initially hidden */
+    animation: fadeInSymbol 0.5s ease-in-out forwards; /* Fade-in animation for symbols */
+}
+
+.symbol-x {
+    color: #f54242; /* Red color for X */
+}
+
+.symbol-o {
+    color: #426ff5; /* Blue color for O */
+}
+
+#resetButton {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#resetButton:hover {
+    background-color: #555;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 0, 17, 0.979);
+    padding: 10px;
+    color: #f1ececfd;
+    text-align: center;
+}
